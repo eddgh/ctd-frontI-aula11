@@ -1,17 +1,237 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <title>Mesa de trabalho</title>
     <style type="text/css">
         /* Adicione o código fonte de estilização */
+        * {
+            margin: 0;
+            text-align: center;
 
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            font-weight: 100;
+            font-size: 13px;
+            line-height: 19px;
+            color: #111;
+            justify-content: center;
+            padding-top: 8px;
+        }
+
+        span {
+            text-decoration: none;
+            color: #0066c0;
+        }
+
+        .conteudo {
+            border: 1px solid lightgray;
+            border-radius: 4px;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            width: 314px;
+            position: relative;
+            padding: 14px 18px;
+            text-align: center;
+        }
+
+        .conteudo h1 {
+            text-align: left;
+            font-size: 28px;
+            padding: 0 0 4px;
+            margin: 0 0 10px;
+            font-weight: 400;
+        }
+
+        .formulario__nome {
+            display: block;
+        }
+
+        .formulario__grupo {
+            margin: 10px 0;
+            text-align: center;
+
+        }
+
+        .formulario__grupo button {
+            margin: 10px 0;
+            background: linear-gradient(180deg,
+                    rgb(240, 229, 207),
+                    rgb(241, 189, 18));
+
+            padding: 10px;
+            border-radius: 5px;
+            height: 30px;
+            width: 100%;
+            border-radius: 3px;
+            border-color: #8d9096;
+            border-style: solid;
+            border-width: 1px;
+            cursor: pointer;
+            display: inline-block;
+            padding: 1px 6px;
+            text-align: center;
+            text-decoration: none !important;
+            vertical-align: middle;
+        }
+
+        .formulario__rotulo {
+            display: block;
+            text-align: left;
+            padding: 0 0 2px 2px;
+            font-weight: bold;
+            float: left;
+        }
+
+        .fomulario__campo {
+            width: 95%;
+            background-color: #fff;
+            text-align: left;
+            height: 25px;
+            padding: 3px 7px;
+            line-height: normal;
+            border: 1px solid #a6a6a6;
+            border-top-color: #949494;
+            border-radius: 3px;
+        }
+
+        #p {
+            text-align: left;
+        }
+
+        #box-alerta {
+            margin-top: 5px;
+            padding: 0;
+            justify-content: left;
+        }
+
+        .alerta {
+            color: #2b2b2b;
+            text-align: left;
+            padding-left: 0;
+            padding-bottom: 10px;
+            float: left;
+            position: relative;
+            font-size: 12px;
+        }
+
+        /* Inicio do divider */
+        .a-box .a-divider.a-divider-section .a-divider-inner:after,
+        .a-color-base-background .a-divider.a-divider-section .a-divider-inner:after,
+        .a-divider.a-divider-section .a-divider-inner:after {
+            display: block;
+            width: 100%;
+            height: 44px;
+            background-color: transparent;
+            background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, 0), #fff);
+            background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0), #fff);
+            /* z-index: 1; */
+            content: "";
+        }
+
+        .a-box .a-divider.a-divider-section .a-divider-inner,
+        .a-color-base-background .a-divider.a-divider-section .a-divider-inner,
+        .a-divider.a-divider-section .a-divider-inner {
+            height: 44px;
+            margin-bottom: -18px;
+            background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, .14), rgba(0, 0, 0, .03) 3px, transparent);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, .14), rgba(0, 0, 0, .03) 3px, transparent);
+            z-index: 0;
+            zoom: 1;
+        }
+
+        /* fim do divider */
+
+
+
+        #icone_i {
+            float: left;
+        }
+
+        #aviso {
+            font-size: 12px;
+            margin: 18px 0 0;
+            text-align: left;
+            padding-bottom: 20px;
+
+        }
+
+        .icone_seta {
+            position: relative;
+            top: 5px;
+            left: -6px;
+            z-index: -2;
+        }
+
+        .login {
+            text-decoration: none;
+            color:#0066c0;
+        }
     </style>
 </head>
+
 <body>
     <!-- Adicione o código fonte da estrutura HTML -->
+    <header><img src="imagens/logo-amazon.PNG" class="icones"></header>
+    <article class="conteudo">
+        <h1 class="conteudo_titulo">Criar conta</h1>
+        <form class="formulario" action="https://api.ctd/cadastrar" method="POST">
 
+            <div class="formulario__grupo">
+                <label class="formulario__rotulo" for="nome">Seu nome</label>
+                <input class="fomulario__campo" name="name" id="nome" type="text" required>
+            </div>
+
+            <div class="formulario__grupo">
+                <label class="formulario__rotulo" for="celular_mail">Número de celular ou e-mail</label>
+                <input class="fomulario__campo" name="celular_mail" id="celular_mail" type="text" required>
+            </div>
+
+            <div class="formulario__grupo">
+                <label class="formulario__rotulo" for="senha">Senha</label>
+                <input class="fomulario__campo" name="senha" minlength="6" id="senha" type="password"
+                    placeholder="Pelo menos 6 caracteres" required>
+                <div id="box-alerta">
+                    <img id="icone_i" src="./imagens/icone.png" alt="Ícone de informação">
+                    <span class="alerta">As senhas devem ter pelo menos 6 caracteres.</span>
+                </div>
+
+            </div>
+
+            <div class="formulario__grupo">
+                <label class="formulario__rotulo" for="confirmacao_senha">Insira a senha nova mais uma vez</label>
+                <input class="fomulario__campo" name="confirmacao_senha" minlength="6" id="confirmacao_senha"
+                    type="password" required>
+
+            </div>
+
+            <div class="formulario__grupo">
+                <button type="submit">Continuar</button>
+            </div>
+
+            <p id="aviso">Ao criar uma conta, você concorda com as <span>Condições de Uso</span> da Amazon. Por favor
+                verifique a <span>Notificação de Privacidade, Notificação de Cookies e a Notificação de Anúncios
+                    Baseados em Interesse</span>.
+            </p>
+            <div class="a-divider a-divider-section">
+                <div class="a-divider-inner"></div>
+            </div>
+
+            <p id="p">Você já tem uma conta? <a class="login" href="#">Fazer login</a><img src="./imagens/icone2.PNG"
+                    class="icone_seta" alt="Ícone seta">
+            </p>
+        </form>
+    </article>
 </body>
+
 </html>
